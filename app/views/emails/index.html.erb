@@ -1,0 +1,35 @@
+<div class="container">
+
+    <p>
+    <%= link_to "Get an email", emails_path, method: :post, class: "btn btn-primary btn-sm", remote: true %>
+    </p>
+<div class="row">
+  <!-- Email list -->
+  <div class="col-sm">
+    <div class="card">
+      <dl class="list-group list-group-flush" id="emails-list">
+        <% @emails.order("created_at").reverse.each do |email| %>
+          <div class="card-body list-group-item" id="listed-<%= email.id %>">
+            <%= link_to email, :class => "text-decoration-none link-dark", remote: true do %>
+              <dt class="card-title" id="card-<%= email.id %>">
+                <%= email.subject %>
+                <% if !email.read %>
+                  <span class="badge rounded-pill bg-primary" id="badge-<%= email.id %>">!</span>
+                <% end %>
+              </dt>
+            <dd class="card-text">
+              <p><%= truncate(email.body, length: 50, separator: " ") %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </dl>
+    </div>
+  </div>
+  
+  <!-- Selected email view -->
+  <div class="col-sm">
+    <div id="current-email">
+    </div>
+  </div>
+
+</div>

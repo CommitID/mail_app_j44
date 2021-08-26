@@ -1,0 +1,3 @@
+document.getElementById("current-email").textContent = "";
+document.getElementById("current-email").insertAdjacentHTML("beforeend", "<%= j render 'email_show', email: @email %>");
+document.querySelector('#badge-<%= @email.id %>').remove();

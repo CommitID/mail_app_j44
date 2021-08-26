@@ -1,0 +1,12 @@
+<div class="card-body list-group-item" id="listed-<%= email.id %>">
+  <%= link_to email, :class => "text-decoration-none link-dark", remote: true do %>
+    <dt class="card-title" id="card-<%= email.id %>">
+      <%= email.subject %>
+      <% if !email.read %>
+        <span class="badge rounded-pill bg-primary" id="badge-<%= email.id %>">!</span>
+      <% end %>
+    </dt>
+<dd class="card-text">
+  <p><%= truncate(email.body, length: 50, separator: " ") %></p>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="container mb-4 mt-4">
+  <% unless notice.nil? %>
+    <div class="alert alert-primary">
+      <%= notice %>
+    </div>
+  <% end %>
+  <% unless alert.nil? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+    </div>
+  <% end %>
+</div>

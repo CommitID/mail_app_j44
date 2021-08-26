@@ -1,0 +1,7 @@
+if (document.querySelector('.btn-update').textContent === "Mark as read") {
+  document.querySelector('.btn-update').textContent = "Mark as unread";
+  document.querySelector('#badge-<%= @email.id %>').remove();
+} else {
+  document.querySelector('.btn-update').textContent = "Mark as read";
+  document.querySelector('#card-<%= @email.id %>').insertAdjacentHTML('beforeend', '<span class="badge rounded-pill bg-primary" id="badge-<%= @email.id %>">!</span>');
+}

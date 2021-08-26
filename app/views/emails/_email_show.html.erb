@@ -1,0 +1,12 @@
+<div id="email-<%= email.id %>">
+  <div class="h1"><%= email.subject %></div>
+  <p><%= email.body %></p>
+    <%= link_to 'Delete', email, method: :delete, :class => "btn btn-danger btn-outline btn-sm", remote: true %></dd>
+  <%= link_to email_path(email.id), method: :patch, :class => "btn-update btn btn-outline-secondary btn-sm", remote: true do %>
+      <% if email.read %>
+        Mark as unread
+      <% else %>
+        Mark as read
+      <% end %>
+    <% end %>
+</div>

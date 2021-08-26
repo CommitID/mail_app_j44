@@ -1,0 +1,9 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1><%= @email.subject %></h1>
+<p><%= @email.body%></p>
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>
+</div>
